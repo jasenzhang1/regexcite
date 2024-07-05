@@ -1,0 +1,119 @@
+---
+title: "Untitled"
+author: "Jasen"
+date: "2024-07-05"
+output: pdf_document
+---
+
+```{r}
+library(devtools)
+```
+
+```{r}
+# use_git()
+```
+
+# look to edit the function
+
+```{r}
+# use_r("strsplit1")
+```
+# load the functions but they aren't in the global environment
+
+```{r}
+load_all()
+```
+
+```{r}
+x <- "alfa,bravo,charlie,delta"
+strsplit1(x, split = ",")
+
+exists("strsplit1", where = globalenv(), inherits = FALSE)
+```
+# checking that things still work
+
+```{r}
+check()
+```
+
+```{r}
+use_mit_license()
+```
+
+```{r}
+document()
+```
+
+```{r}
+?strsplit1
+```
+
+```{r}
+check()
+```
+
+```{r}
+install()
+```
+
+```{r}
+library(regexcite)
+
+x <- "alfa,bravo,charlie,delta"
+strsplit1(x, split = ",")
+```
+# This initializes the unit testing machinery for your package.
+
+```{r}
+use_testthat()
+```
+
+# now we load the test cases
+
+```{r}
+use_test('strsplit1')
+```
+
+# and then we see if the tests have passed
+
+```{r}
+test()
+```
+# how to use other packages when making your packages
+
+```{r}
+use_package("stringr")
+```
+# reshuffles the names
+
+# we only rename "strsplit1" as "str_split_one"
+# the contents are the same 
+
+```{r}
+rename_files("strsplit1", "str_split_one")
+```
+
+# update the test cases
+
+```{r}
+use_testthat()
+use_test('str_split_one')
+```
+# also need to update the NAMESPACE
+
+```{r}
+document()
+```
+
+# try the function again
+
+```{r}
+load_all()
+
+str_split_one("a, b, c", pattern = ", ")
+```
+# upload to github
+
+```{r}
+use_github()
+```
